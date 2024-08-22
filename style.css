@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #121212;
+    font-family: 'Courier New', Courier, monospace;
+    flex-direction: column;
+}
+
+.clock-container {
+    text-align: center;
+}
+
+.clock {
+    position: relative;
+    width: 350px;
+    height: 200px;
+    border-radius: 50%; /* Oval shape */
+    border: 5px solid rgba(0, 255, 127, 0.7); /* Border color */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    box-shadow: 0 0 30px rgba(0, 255, 127, 0.5),
+                0 0 60px rgba(0, 255, 127, 0.5),
+                0 0 90px rgba(0, 255, 127, 0.5),
+                0 0 120px rgba(0, 255, 127, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Ensure this is above background */
+    margin-bottom: 20px;
+}
+
+#canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    border-radius: 50%; /* Oval shape */
+}
+
+#time {
+    color: #00FF7F; /* Spring Green color */
+    font-size: 2.5em; /* Adjusted font size */
+    text-align: center;
+    z-index: 2; /* Ensure the time is above the canvas */
+    text-shadow: 0 0 20px rgba(0, 255, 127, 0.7), 
+                 0 0 40px rgba(0, 255, 127, 0.7), 
+                 0 0 60px rgba(0, 255, 127, 0.7);
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 20px rgba(0, 255, 127, 0.5),
+                     0 0 40px rgba(0, 255, 127, 0.5),
+                     0 0 60px rgba(0, 255, 127, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 40px rgba(0, 255, 127, 1),
+                     0 0 80px rgba(0, 255, 127, 1),
+                     0 0 120px rgba(0, 255, 127, 1);
+    }
+}
+
+.credits {
+    font-family: 'Arial', sans-serif; /* Nice, clean font */
+    color: #00FF7F; /* Matching the theme */
+    font-size: 1.2em;
+    text-shadow: 0 0 10px rgba(0, 255, 127, 0.7);
+}
+
+.credits span {
+    font-weight: bold; /* Emphasize your name */
+    font-style: italic;
+}
